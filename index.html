@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Teste de Cookies</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+      z-index: 999999;
+    }
+    .btn {
+      padding: 10px 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+    .btn-sim { background-color: #2e7d32; color: white; }
+    .btn-nao { background-color: #c62828; color: white; }
+  </style>
+</head>
+<body>
+
+  <h1>Página de Teste de Consentimento</h1>
+  <p>Esta página foi criada para validar o funcionamento do banner de cookies.</p>
+
+  <!-- Banner de Cookies Flutuante -->
+  <div id="cookie-banner">
+    <p style="margin: 0 0 12px 0;">Este site utiliza cookies de teste. Deseja aceitar a coleta de dados?</p>
+    <button class="btn btn-sim" onclick="responderCookie('sim')">Sim</button>
+    <button class="btn btn-nao" onclick="responderCookie('nao')">Não</button>
+  </div>
+
+  <script>
+    function responderCookie(opcao) {
+      var dataExpiracao = new Date();
+      dataExpiracao.setTime(dataExpiracao.getTime() + (7 * 24 * 60 * 60 * 1000));
+      document.cookie = "consentimento_cookie=" + opcao + "; expires=" + dataExpiracao.toUTCString() + "; path=/";
+      alert("Sua escolha foi salva: " + opcao.toUpperCase());
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    if (document.cookie.indexOf("consentimento_cookie=") !== -1) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
