@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site Teste MM - QOD</title>
+
+  <!-- Início do aviso de consentimento de cookies OneTrust para matheusmendesm05-ai.github.io/Teste-cookies -->
+  <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="01a0c968-7e43-7ca8-9b00-11bd31a1e25f-test"></script>
+  <script type="text/javascript">
+    function OptanonWrapper() { }
+  </script>
+  <!-- Fim do aviso de consentimento de cookies OneTrust para matheusmendesm05-ai.github.io/Teste-cookies -->
+
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,89 +23,10 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #cookie-banner {
-      position: fixed;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
-      max-width: 520px;
-      background-color: #6b21a8;
-      color: #ffffff;
-      padding: 22px 25px;
-      border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(107, 33, 168, 0.35);
-      z-index: 999999;
-      text-align: center;
-      box-sizing: border-box;
-    }
-
-    .btn-container {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .btn {
-      padding: 10px 26px;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .btn-sim {
-      background-color: #ffffff;
-      color: #6b21a8;
-    }
-
-    .btn-nao {
-      background-color: #581c87;
-      color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.3);
     }
   </style>
 </head>
 <body>
-
-  <!-- Banner de Cookies Flutuante -->
-  <div id="cookie-banner">
-    <p style="margin: 0; font-size: 15px; line-height: 1.5; font-weight: 500;">
-      Este site utiliza cookies para melhorar a sua experiência. Você aceita o uso de cookies de teste?
-    </p>
-    <div class="btn-container">
-      <button class="btn btn-sim" onclick="responderCookie('sim')">Sim, Aceitar</button>
-      <button class="btn btn-nao" onclick="responderCookie('nao')">Não, Recusar</button>
-    </div>
-  </div>
-
-  <script>
-    function responderCookie(opcao) {
-      var dataExpiracao = new Date();
-      dataExpiracao.setTime(dataExpiracao.getTime() + (7 * 24 * 60 * 60 * 1000));
-      document.cookie = "consentimento_cookie=" + opcao + "; expires=" + dataExpiracao.toUTCString() + "; path=/";
-      alert("Resposta salva no cookie: " + opcao.toUpperCase());
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-
-    if (document.cookie.indexOf("consentimento_cookie=") !== -1) {
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-  </script>
 
 </body>
 </html>
